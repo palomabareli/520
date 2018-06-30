@@ -1,0 +1,6 @@
+1 - abacaxi
+2 - uva
+3 - pera
+4 - maça
+5 - lichia
+999 - Mamão
