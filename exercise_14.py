@@ -7,11 +7,12 @@ E devolver o conteúdo do arquivo
 
 import function_import_3 as func
 
-def readLines(archiveName):
+def readArchive_1(archiveName):
     try:
-        func.readArchive(archiveName = archiveName)
+        with open(archiveName, "r") as archive:
+            return print(archive.readlines())
     except Exception as ex:
         print("Error the read archive {0}. Message error: {1}", archiveName, ex)
 
-nameOfArchive = input(print("Add the name of archive: "))
-readLines(nameOfArchive)
+archiveName1 = input("Add a name in the arquive: ")
+readArchive_1(archiveName1)
