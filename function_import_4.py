@@ -1,25 +1,36 @@
 #!/usr/bin/python3
 
-
 def readArchiveAll(nameArchive, modoRead, content):
-    if content == "a":
-        addArchive(nameArchive)
-    if content == "w":
-        writeArchive(nameArchive)        
+    if modoRead == "a":
+        addArchive(nameArchive, content)
+    if modoRead == "w":
+        writeArchive(nameArchive, content)        
     else:
-        readArchive(nameArchive)
+        readArchive(nameArchive), content
 
-def addArchive(nameArchive):
-    with open(nameArchive, "a") as archive:
-        print(archive.readlines())
-        archive.close()    
+def addArchive(nameArchive, content):
+    try:
+        with open(nameArchive, "a") as archive:
+            archive.write(content + "\n")
+            print(archive.readlines())
+            archive.close()  
+    except Exception as ex:
+        print("Error mensage: " + ex)
 
-def readArchive(nameArchive):
-    with open(nameArchive, "r") as archive:
-        print(archive.readlines())
-        archive.close()    
-
-def writeArchive(nameArchive):
-    with open(nameArchive, "w") as archive:
-        print(archive.readlines())  
-        archive.close()          
+def readArchive(nameArchive, content):
+    try:
+        with open(nameArchive, "r") as archive:
+            print(archive.readlines())
+            archive.close() 
+    except Exception as ex:
+        print("Error mensage: " + ex)
+            
+def writeArchive(nameArchive, content):
+    try:
+        with open(nameArchive, "a") as archive:
+            archive.write(content + "\n")
+            print(archive.readlines())
+            archive.close()  
+    except Exception as ex:
+        print("Error mensage: " + ex)
+        
