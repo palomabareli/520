@@ -15,7 +15,7 @@ def addArchive(nameArchive, content):
             print(archive.readlines())
             archive.close()  
     except Exception as ex:
-        print("Error mensage: " + ex)
+        func6.logFile(ex)
 
 def readArchive(nameArchive, content):
     try:
@@ -23,7 +23,7 @@ def readArchive(nameArchive, content):
             print(archive.readlines())
             archive.close() 
     except Exception as ex:
-        print("Error mensage: " + ex)
+        func6.logFile(ex)
             
 def writeArchive(nameArchive, content):
     try:
@@ -32,5 +32,5 @@ def writeArchive(nameArchive, content):
             print(archive.readlines())
             archive.close()  
     except Exception as ex:
-        print("Error mensage: " + ex)
+        func6.logFile(ex)
         
